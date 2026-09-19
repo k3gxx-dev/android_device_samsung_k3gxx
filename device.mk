@@ -22,8 +22,8 @@ $(call inherit-product, device/samsung/universal5420-common/device-common.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Flat device tree for boot image
-PRODUCT_PACKAGES += \
+# Flat device tree for boot image (host tool)
+PRODUCT_HOST_PACKAGES += \
     dtbhtoolExynos
 
 # Audio
