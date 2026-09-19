@@ -80,7 +80,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 IR_HAL_SUFFIX := universal5422
 
 # Radio
-BOARD_PROVIDES_LIBRIL := true
 BOARD_MODEM_TYPE := xmm6360
 BOARD_RIL_CLASS := ../../../device/samsung/k3gxx/ril
 
