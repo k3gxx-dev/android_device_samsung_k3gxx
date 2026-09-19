@@ -16,4 +16,5 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+# Audio HAL is provided by hardware/samsung/audio (TARGET_AUDIOHAL_VARIANT := samsung)
+include $(call all-named-subdir-makefiles,fingerprint)
