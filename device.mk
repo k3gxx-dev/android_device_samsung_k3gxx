@@ -139,9 +139,9 @@ PRODUCT_PACKAGES += \
     ueventd.universal5422.rc \
     init.power.rc
 
-# Samsung Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+# Samsung Doze (legacy package; ambient display handled natively in Android 11)
+# PRODUCT_PACKAGES += \
+#     SamsungDoze
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
