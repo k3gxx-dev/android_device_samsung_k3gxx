@@ -21,5 +21,3 @@ LOCAL_SRC_FILES := libshim.cpp
 LOCAL_MODULE := libshim
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
-
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
