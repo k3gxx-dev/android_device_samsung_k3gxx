@@ -85,6 +85,16 @@ extern "C" void legacy_graphic_buffer_constructor(
     constructor(self, width, height, format, usage, std::string("k3gxx-camera"));
 }
 
+extern "C" __attribute__((visibility("default"))) void
+legacy_graphic_buffer_base_constructor(void* self, uint32_t width,
+        uint32_t height, int format, uint32_t usage)
+        __asm__("_ZN7android13GraphicBufferC2Ejjij");
+
+extern "C" void legacy_graphic_buffer_base_constructor(
+        void* self, uint32_t width, uint32_t height, int format, uint32_t usage) {
+    legacy_graphic_buffer_constructor(self, width, height, format, usage);
+}
+
 /*
  * Keep the old complete-object destructor entry point available. The current
  * libui implementation exposes the base-object destructor, which performs the
@@ -103,4 +113,12 @@ extern "C" void legacy_graphic_buffer_destructor(void* self) {
     }
 
     destructor(self);
+}
+
+extern "C" __attribute__((visibility("default"))) void
+legacy_graphic_buffer_base_destructor(void* self)
+        __asm__("_ZN7android13GraphicBufferD2Ev");
+
+extern "C" void legacy_graphic_buffer_base_destructor(void* self) {
+    legacy_graphic_buffer_destructor(self);
 }
