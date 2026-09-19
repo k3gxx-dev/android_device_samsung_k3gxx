@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2026 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,10 +16,13 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SHARED_LIBRARIES := libgui liblog libutils
-LOCAL_SRC_FILES := libshim.cpp
-LOCAL_MODULE := libshim
+LOCAL_MODULE := libshim_camera_k3gxx
 LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_VENDOR_MODULE := true
+LOCAL_SRC_FILES := libshim_camera.cpp
+LOCAL_SHARED_LIBRARIES := \
+    libdl \
+    libshim_camera
 
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(BUILD_SHARED_LIBRARY)

@@ -21,6 +21,17 @@
      for different hardware and product builds. -->
 <resources>
 
+    <!-- Galaxy S5 k3gxx display: 1080x1920 AMOLED at 432 dpi. -->
+    <integer name="config_screenWidth">1080</integer>
+    <integer name="config_screenHeight">1920</integer>
+    <integer name="config_lcdDensity">432</integer>
+
+    <!-- The device has physical/capacitive keys and does not need a nav bar. -->
+    <bool name="config_showNavigationBar">false</bool>
+
+    <!-- The rear camera LED is exposed as a framework torch. -->
+    <bool name="config_enableTorch">true</bool>
+
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
@@ -198,6 +209,9 @@
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">true</bool>
+
+    <!-- The 2800 mAh power profile is supplied by power_profile.xml. -->
+    <bool name="config_batterySaverDefDisableVibration">false</bool>
 
     <!-- Screen brightness when dozing. -->
     <integer name="config_screenBrightnessDoze">5</integer>

@@ -8,8 +8,8 @@ ro.bq.gpu_to_cpu_unsupported=1
 # Open GL
 ro.opengles.version=196609
 
-# Lcd density
-ro.sf.lcd_density=480
+# LCD density for the 1080x1920 AMOLED panel.
+ro.sf.lcd_density=432
 
 # Randomly from stock
 ro.ril.gprsclass=10
@@ -17,13 +17,17 @@ ro.ril.hsxpa=1
 ro.sec.fle.encryption=true
 ro.secwvk=220
 
-# Ril
-rild.libpath=/system/lib/libsec-ril.so
-rild.libargs=-d /dev/ttyS0
+# Intel XMM6360 RIL
+rild.libpath=/vendor/lib/libsec-ril.so
+rild.libargs=-d /dev/umts_ipc0
 ro.telephony.ril_class=SamsungExynosRIL
 ro.ril.telephony.mqanelements=6
 ro.telephony.default_network=0
 telephony.lteOnCdmaDevice=0
+ro.ril.modem=xmm6360
+ro.ril.device.boot=/dev/umts_boot0
+ro.ril.device.ipc=/dev/umts_ipc0
+ro.ril.device.rfs=/dev/umts_rfs0
 
 # Camera Hacks
 camera2.portability.force_api=1

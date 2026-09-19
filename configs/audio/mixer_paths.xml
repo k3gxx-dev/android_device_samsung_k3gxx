@@ -1,4 +1,5 @@
 <mixer>
+    <!-- Wolfson WM5110 (Florida) codec routes for the Pacific sound card. -->
     <!-- ########## Initial mixer settings ########## -->
 
     <ctl name="Noise Gate Switch" value="0" />

@@ -32,9 +32,18 @@ PRODUCT_PACKAGES += \
     libtinycompress
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
+# Bluetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bluetooth/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf
+
+# SensorHub and heart-rate monitor
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf \
+    $(LOCAL_PATH)/configs/sensors/sensorhub.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensorhub.conf
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -42,7 +51,9 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    Snap \
+    android.hardware.camera.provider@2.4-impl.exynos5420 \
+    android.hardware.camera.provider@2.4-service
 
 # Display
 PRODUCT_PACKAGES += \
@@ -50,7 +61,9 @@ PRODUCT_PACKAGES += \
 
 # Device shims
 PRODUCT_PACKAGES += \
-    libshim
+    libshim \
+    libshim_camera_k3gxx \
+    libshim_secnative
 
 # GPS
 PRODUCT_COPY_FILES += \

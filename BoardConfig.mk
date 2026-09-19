@@ -37,6 +37,14 @@ BOARD_USES_DT := true
 # Camera
 BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 BOARD_NEEDS_MEMORYHEAPION := true
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+
+# Vendor linker shims. Keep the common Mali shim and replace the common
+# camera mapping with the k3gxx extension that also covers the RIL ABI.
+TARGET_LD_SHIM_LIBS := \
+    /vendor/lib/egl/libGLES_mali.so|/vendor/lib/libgutils.so \
+    /vendor/lib/libexynoscamera.so|/vendor/lib/libshim_camera_k3gxx.so \
+    /vendor/lib/libsec-ril.so|/vendor/lib/libshim_secnative.so
 
 # ValidityService
 BOARD_USES_VALIDITY := true
@@ -80,8 +88,10 @@ BOARD_RIL_CLASS := ../../../device/samsung/k3gxx/ril
 TARGET_RECOVERY_FSTAB := device/samsung/k3gxx/ramdisk/fstab.universal5422
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/k3gxx/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    device/samsung/k3gxx/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/samsung/k3gxx/sepolicy/private
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -116,8 +126,9 @@ BOARD_USES_NEW_HDMI := true
 BOARD_USES_WFD := true
 
 # Bluetooth
-BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/configs/bluetooth/libbt_vndcfg.txt
+BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/configs/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/configs/bluetooth
 
 # NFC
 BOARD_NFC_CHIPSET := pn547
