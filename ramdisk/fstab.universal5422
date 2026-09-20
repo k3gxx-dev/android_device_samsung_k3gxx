@@ -15,7 +15,7 @@
 /dev/block/platform/12200000.dwmmc0/by-name/OTA         /misc               emmc      defaults                                                                          defaults
 
 # VOLD
-/dev/block/platform/12200000.dwmmc0/by-name/HIDDEN      /preload            ext4      defaults                                                                          voldmanaged=preload:auto
+/dev/block/platform/12200000.dwmmc0/by-name/HIDDEN      /vendor             ext4      ro,errors=panic                                                                   wait
 /devices/12220000.dwmmc2/mmc_host/mmc*                  auto                auto      defaults                                                                          voldmanaged=sdcard:auto,encryptable=userdata
 /devices/usb.1/12000000.dwc3/xhci-hcd.4.auto/usb*       auto                auto      defaults                                                                          voldmanaged=usb:auto 
 
