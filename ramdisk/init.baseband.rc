@@ -13,11 +13,11 @@ on fs
     chown radio system /sys/devices/virtual/misc/umts_dm0/dm_state
 	
 # Parse hardware revision (needs to happen before cbd starts)
-service modemloader /system/bin/modemloader
+service modemloader /vendor/bin/modemloader
     class core
     oneshot
 		
-service cpboot-daemon /system/bin/cbd -d -txmm626x -bh -mh -p 13
+service cpboot-daemon /vendor/bin/cbd -d -txmm626x -bh -mh -p 13
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell

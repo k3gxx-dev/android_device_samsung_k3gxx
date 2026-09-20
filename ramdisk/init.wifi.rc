@@ -1,9 +1,9 @@
 # Wi-Fi init file
 
-    #Create directory for hostapd
+on post-fs-data
+    # Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
-on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
     mkdir /data/misc/wifi 0770 wifi system
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
@@ -55,9 +55,9 @@ service wifiloader /system/bin/wifiloader
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf -O/data/misc/wifi/sockets \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf -O/data/misc/wifi/sockets \
     -c/data/misc/wifi/p2p_supplicant.conf \
-    -I/system/etc/wifi/p2p_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/p2p_supplicant_overlay.conf \
     -puse_p2p_group_interface=1 -puse_multi_chan_concurrent=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     class main

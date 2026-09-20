@@ -2,3 +2,6 @@ allow sysfs_type tmpfs:filesystem associate;
 
 type batch_io_device, file_type;
 type debugfs_asoc, fs_type;
+type sysfs_writable, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_mdnie_writable, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_input_file, fs_type, sysfs_type, mlstrustedobject;

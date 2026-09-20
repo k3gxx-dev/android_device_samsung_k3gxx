@@ -43,7 +43,9 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
     if [ -n "$DEST" ]; then
       FILE=$DEST
     fi
-    echo "  $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+    # If the file path already starts with vendor/, remove it so we do not end up with vendor/vendor/
+    DEST_FILE=`echo $FILE | sed -e "s/^vendor\///g"`
+    echo "  $OUTDIR/proprietary/$FILE:\$(TARGET_COPY_OUT_VENDOR)/$DEST_FILE$LINEEND" >> $MAKEFILE
   fi
 done
 
