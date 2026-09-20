@@ -496,13 +496,6 @@ typedef uint8_t                                 GnssSvFlags;
  * Constellation type of GnssSvInfo
  */
 typedef uint8_t                         GnssConstellationType;
-#define GNSS_CONSTELLATION_UNKNOWN      0
-#define GNSS_CONSTELLATION_GPS          1
-#define GNSS_CONSTELLATION_SBAS         2
-#define GNSS_CONSTELLATION_GLONASS      3
-#define GNSS_CONSTELLATION_QZSS         4
-#define GNSS_CONSTELLATION_BEIDOU       5
-#define GNSS_CONSTELLATION_GALILEO      6
 
 /**
  * Name for the GPS XTRA interface.
