@@ -142,3 +142,4 @@ BOARD_SECCOMP_POLICY += device/samsung/k3gxx/seccomp
 
 # Inherit vendor board configuration
 -include vendor/samsung/k3gxx/BoardConfigVendor.mk
+TARGET_KERNEL_CLANG_COMPILE := false
