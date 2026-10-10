@@ -17,6 +17,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Only compile if not already provided by vendor/samsung/k3gxx/sensors-biometrics submodule
+ifeq ($(wildcard vendor/samsung/k3gxx/sensors-biometrics/Android.mk),)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := fingerprint.universal5422
@@ -26,3 +28,4 @@ LOCAL_SHARED_LIBRARIES := liblog libcutils
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+endif

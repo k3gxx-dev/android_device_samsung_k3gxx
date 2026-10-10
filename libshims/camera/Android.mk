@@ -14,6 +14,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Only compile if not already provided by vendor/samsung/k3gxx/camera submodule
+ifeq ($(wildcard vendor/samsung/k3gxx/camera/Android.mk),)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libshim_camera_k3gxx
@@ -26,3 +28,4 @@ LOCAL_SHARED_LIBRARIES := \
     libshim_camera
 
 include $(BUILD_SHARED_LIBRARY)
+endif

@@ -14,6 +14,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Only compile if not already provided by vendor/samsung/k3gxx/ril submodule
+ifeq ($(wildcard vendor/samsung/k3gxx/ril/Android.mk),)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libshim_secnative
@@ -23,3 +25,4 @@ LOCAL_VENDOR_MODULE := true
 LOCAL_SRC_FILES := libshim_secnative.cpp
 
 include $(BUILD_SHARED_LIBRARY)
+endif
