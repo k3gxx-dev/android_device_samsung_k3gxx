@@ -102,6 +102,9 @@ BOARD_USE_BGRA_8888 := true
 BOARD_USES_VIRTUAL_DISPLAY := true
 BOARD_USES_HWC_SERVICES := true
 
+# Sensors
+BOARD_SENSORS_MULTI_HAL_CONFIG := device/samsung/k3gxx/configs/sensors/_hals.conf
+
 # HeartRate
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
