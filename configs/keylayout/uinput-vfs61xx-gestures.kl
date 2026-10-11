@@ -1,0 +1,14 @@
+#
+# Keylayout for Validity VFS61xx fingerprint gesture uinput virtual device
+# Samsung Galaxy S5 3G (SM-G900H / k3gxx)
+#
+key 104   PAGE_UP
+key 109   PAGE_DOWN
+key 103   DPAD_UP
+key 108   DPAD_DOWN
+key 158   BACK
+key 172   HOME
+key 280   SYSTEM_NAVIGATION_UP
+key 281   SYSTEM_NAVIGATION_DOWN
+key 282   SYSTEM_NAVIGATION_LEFT
+key 283   SYSTEM_NAVIGATION_RIGHT

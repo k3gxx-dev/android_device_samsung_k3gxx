@@ -42,7 +42,6 @@ PRODUCT_COPY_FILES += \
 
 # SensorHub and heart-rate monitor
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensorhub.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensorhub.conf
 
 # Boot animation
@@ -147,6 +146,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio_keys_8.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio_keys_8.kl \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchkey.kl \
+    $(LOCAL_PATH)/configs/keylayout/uinput-vfs61xx-gestures.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-vfs61xx-gestures.kl \
     $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Synaptics_HID_TouchPad.idc
 
 # Radio-specific modules
